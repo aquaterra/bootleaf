@@ -101,12 +101,25 @@ var config = {
 		{
 			"id": "gemeenten",
 			"name": "Gemeenten België",
-			"type": "WFS",
-			"url": "http://localhost:8080/geoserver/Datacenters/wfs?service=wfs&version=1.1.0&request=GetFeature&typename=Datacenters:gemeenten&outputFormat=application/json&srsname=EPSG:3857",
-			"geomField": "wkb_geometry",
-			"useCors": true,
-			
-		}
+			"type": "geoJSON",
+			"cluster": true,
+			"showCoverageOnHover": false,
+			"minZoom": 10,
+			"url": "./data/gemeenten.json",
+			"style": {
+			"stroke": true,
+			"fillColor": "#00FFFF",
+			"fillOpacity": 0.5,
+			"weight": 0.5,
+			"opacity": 1,
+			"color": '#727272',
+			},
+			  "visible": true,
+			  // "label": {
+			  // 	"name": "NAME",
+			  // 	"minZoom": 14
+			  // }
+			},
 	/*
 	{
     "id": "theatres",
