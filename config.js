@@ -97,8 +97,8 @@ var config = {
 		"fillColor": '#E31A1C',
 		"stroke": true
 	},
-	"layers": [
-		{
+	"layers": [/*
+		{ 
 			"id": "gemeenten",
 			"name": "Gemeenten België",
 			"type": "geoJSON",
@@ -119,7 +119,7 @@ var config = {
 			  // 	"name": "NAME",
 			  // 	"minZoom": 14
 			  // }
-			},
+			},*/
 	/*
 	{
     "id": "theatres",
