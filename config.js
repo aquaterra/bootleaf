@@ -1,14 +1,14 @@
 var config = {
-	"title": "Bootleaf template map",
+	"title": "Bootleaf map Realdolmen",
 	"start": {
 		// "maxZoom": 16,
-		"center": [38.203,-99.799],
-		"zoom": 4,
+		"center": [50.888,4.158],
+		"zoom": 9,
 		"attributionControl": true,
 		"zoomControl": false
 	},
 	"about": {
-		"title": "Bootleaf application template",
+		"title": "Bootleaf map Realdolmen datacenters",
 		"contents": "<p>This is an open-source version of the excellent <a href='https://github.com/bmcbride/bootleaf'>Bootleaf map </a>started by Bryan McBride.</p><p>It's designed for rapid web map development. See <a href='https://github.com/iag-geo/bootleaf'>https://github.com/iag-geo/bootleaf</a> for more information.</p><p>Chage this message in the config file</p>"
 	},
 	"controls": {
@@ -51,7 +51,7 @@ var config = {
 		}
 	},
 	// "activeTool": "identify", // options are identify/coordinates/queryWidget
-	"basemaps": ['esriGray', 'esriDarkGray', 'esriStreets', 'OpenStreetMap', "Aerial"],
+	"basemaps": ['esriGray', 'esriDarkGray', 'esriStreets', 'OpenStreetMap'],
 	"bing_key": "enter your Bing Maps key",
 	"mapboxKey": "enter your MapBox key",
 	// "defaultIcon": {
@@ -65,6 +65,7 @@ var config = {
 	// 		"popupAnchor":  [-3, -76]
 	// },
 	"tocCategories": [
+		/*
 		{
 			"name": "GeoJSON layers",
 			"layers": ["theatres", "museums", "us_density"]
@@ -73,15 +74,20 @@ var config = {
 			"name": "ArcGIS Layers",
 			"layers" : ["trees", "counties", "railways", "us_states"]
 		},
+		*/
 		{
 			"name": "WMS/WFS layers",
-			"layers": ["US_population", "countries"],
+			"layers": ["Gemeenten België"],
 			"exclusive": false
 		}
 	],
+	/*
 	"projections": [
-		{4269: '+proj=longlat +ellps=GRS80 +datum=NAD83 +no_defs '}
+		{
+		"EPSG": "3857"
+		}
 	],
+	*/
 	"highlightStyle": {
 		"weight": 2,
 		"opacity": 1,
@@ -92,6 +98,16 @@ var config = {
 		"stroke": true
 	},
 	"layers": [
+		{
+			"id": "gemeenten",
+			"name": "Gemeenten België",
+			"type": "WFS",
+			"url": "http://localhost:8080/geoserver/Datacenters/wfs?service=wfs&version=1.1.0&request=GetFeature&typename=Datacenters:gemeenten&outputFormat=application/json&srsname=EPSG:3857",
+			"geomField": "wkb_geometry",
+			"useCors": true,
+			
+		}
+	/*
 	{
     "id": "theatres",
     "name": "Theatres",
@@ -342,5 +358,6 @@ var config = {
       	{"name": "pop_est", "alias": "Population estimate", "thousands": true}
       ]
 		}
+	*/
 	]
 }
